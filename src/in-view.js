@@ -79,7 +79,7 @@ function getElements(obj) {
         return [].slice.call(obj);
     if (obj.nodeType)
         return [obj];
-    throw new TypeError('Expected a selector string or list of nodes.');
+    return [];
 }
 
 // Export a singleton.
