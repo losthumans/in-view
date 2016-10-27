@@ -46,9 +46,11 @@ const inView = () => {
     * If supported, use MutationObserver to watch the
     * DOM and run checks on mutation.
     */
-    if (window.MutationObserver) {
-        new MutationObserver(check)
-            .observe(document.body, { attributes: true, childList: true, subtree: true });
+    if (MutationObserver) {
+        addEventListener('DOMContentLoaded', () => {
+            new MutationObserver(check)
+                .observe(document.body, { attributes: true, childList: true, subtree: true });
+        });
     }
 
     /**
